@@ -1,3 +1,5 @@
+*.flatpakref
 .flatpak-builder/
+builddir/
+release-repo/
 repo/
-*gpg

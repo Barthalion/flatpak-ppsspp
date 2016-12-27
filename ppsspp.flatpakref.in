@@ -1,0 +1,11 @@
+[Flatpak Ref]
+Title=PPSSPP
+Name=org.ppsspp.PPSSPP
+Branch=stable
+Url=@URL@
+IsRuntime=False
+GPGKey=@GPG@
+RuntimeRepo=https://sdk.gnome.org/gnome.flatpakrepo
+Comment=PPSSPP
+Description=Open source PSP emulator
+Icon=http://ppsspp.org/img/ppsspp-icon.png
