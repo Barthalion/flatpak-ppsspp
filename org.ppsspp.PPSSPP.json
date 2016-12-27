@@ -9,9 +9,10 @@
   "rename-desktop-file": "ppsspp.desktop",
   "rename-icon": "ppsspp",
   "finish-args": [
-    "--socket=x11",
+    "--filesystem=home:ro",
     "--share=network",
-    "--filesystem=home:ro"
+    "--socket=pulseaudio",
+    "--socket=x11"
   ],
   "modules": [
     {
