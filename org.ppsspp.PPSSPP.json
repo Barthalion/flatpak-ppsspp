@@ -5,6 +5,8 @@
   "runtime-version": "1.4",
   "sdk": "org.freedesktop.Sdk",
   "command": "ppsspp",
+  "rename-desktop-file": "ppsspp.desktop",
+  "rename-icon": "ppsspp",
   "finish-args": [
     "--socket=x11",
     "--share=network",
@@ -34,8 +36,7 @@
     {
       "name": "ppsspp",
       "buildsystem": "cmake",
-      "post-install": [
-      ],
+      "post-install": [],
       "sources": [
         {
           "type": "git",
@@ -54,14 +55,14 @@
             "mkdir -p /app/ppsspp /app/bin /app/share/applications",
             "install -m755 PPSSPPSDL /app/ppsspp/",
             "cp -dr assets /app/ppsspp/",
-            "install -Dm644 assets/unix-icons/icon-512.svg /app/share/icons/hicolor/scalable/apps/org.ppsspp.PPSSPP.svg",
+            "install -Dm644 assets/unix-icons/icon-512.svg /app/share/icons/hicolor/scalable/apps/ppsspp.svg",
             "ln -s /app/ppsspp/PPSSPPSDL /app/bin/ppsspp",
-            "install -m644 org.ppsspp.PPSSPP.desktop /app/share/applications/"
+            "install -m644 ppsspp.desktop /app/share/applications/"
           ]
         },
         {
           "type": "file",
-          "path": "org.ppsspp.PPSSPP.desktop"
+          "path": "ppsspp.desktop"
         }
       ]
     }
