@@ -7,7 +7,8 @@
   "command": "ppsspp",
   "rename-desktop-file": "ppsspp.desktop",
   "rename-icon": "ppsspp",
-  "desktop-file-name-prefix": " (nightly)",
+  "tags": ["nightly"],
+  "desktop-file-name-suffix": " (nightly)",
   "finish-args": [
     "--filesystem=home:ro",
     "--share=network",
