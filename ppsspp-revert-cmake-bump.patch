@@ -1,0 +1,19 @@
+commit 02d9ade138dfebde49f07703dbf9472f0f57acaa
+Author: Bartłomiej Piotrowski <b@bpiotrowski.pl>
+Date:   Tue Dec 27 16:02:32 2016 +0100
+
+    Revert "cmake: Bump requirement to CMake 3.6"
+    
+    This reverts commit fddba830813a45007ddd71d1fc8394b2dbd1d366.
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 54baf1a26..b20c4e560 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1,5 +1,5 @@
+ # vim:noexpandtab:
+-cmake_minimum_required(VERSION 3.6)
++cmake_minimum_required(VERSION 2.8.8)
+ project(PPSSPP)
+ 
+ #This is supposed to work but doesn't!

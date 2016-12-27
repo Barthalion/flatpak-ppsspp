@@ -2,18 +2,26 @@ include Makefile.config
 
 all: test
 
-test: repo org.ppsspp.PPSSPP.json
+test: init-repo org.ppsspp.PPSSPP.json
 	flatpak-builder --force-clean --repo=repo --ccache --require-changes builddir org.ppsspp.PPSSPP.json
 	flatpak build-update-repo repo
 
-release: release-repo org.ppsspp.PPSSPP.json
+release: init-release-repo org.ppsspp.PPSSPP.json
 	flatpak-builder --force-clean --repo=release-repo --ccache --gpg-sign=${RELEASE_GPG_KEY} builddir org.ppsspp.PPSSPP.json
 	flatpak build-update-repo --generate-static-deltas --gpg-sign=${RELEASE_GPG_KEY} release-repo
 
-repo:
+test-master: init-repo org.ppsspp.PPSSPP.master.json
+	flatpak-builder --force-clean --repo=repo --ccache --require-changes builddir org.ppsspp.PPSSPP.master.json
+	flatpak build-update-repo repo
+
+release-master: init-release-repo org.ppsspp.PPSSPP.master.json
+	flatpak-builder --force-clean --repo=release-repo --ccache --gpg-sign=${RELEASE_GPG_KEY} builddir org.ppsspp.PPSSPP.master.json
+	flatpak build-update-repo --generate-static-deltas --gpg-sign=${RELEASE_GPG_KEY} release-repo
+
+init-repo:
 	ostree init --mode=archive-z2 --repo=repo
 
-release-repo:
+init-release-repo:
 	ostree init --mode=archive-z2 --repo=release-repo
 
 ppsspp.flatpakref: ppsspp.flatpakref.in

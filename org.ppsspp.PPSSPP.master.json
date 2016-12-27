@@ -1,0 +1,57 @@
+{
+  "app-id": "org.ppsspp.PPSSPP",
+  "branch": "master",
+  "runtime": "org.freedesktop.Platform",
+  "runtime-version": "1.4",
+  "sdk": "org.freedesktop.Sdk",
+  "command": "ppsspp",
+  "rename-desktop-file": "ppsspp.desktop",
+  "rename-icon": "ppsspp",
+  "desktop-file-name-prefix": " (nightly)",
+  "finish-args": [
+    "--filesystem=home:ro",
+    "--share=network",
+    "--socket=pulseaudio",
+    "--socket=x11"
+  ],
+  "modules": [
+    "dependencies/sdl2-2.0.5.json",
+    "dependencies/glu-9.0.0.json",
+    {
+      "name": "ppsspp",
+      "buildsystem": "cmake",
+      "post-install": [],
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/hrydgard/ppsspp.git"
+        },
+        {
+          "type": "patch",
+          "path": "ppsspp-install.patch"
+        },
+        {
+          "type": "patch",
+          "path": "ppsspp-revert-cmake-bump.patch"
+        },
+        {
+          "type": "script",
+          "dest-filename": "install.sh",
+          "commands": [
+            "set -x",
+            "mkdir -p /app/ppsspp /app/bin /app/share/applications",
+            "install -m755 PPSSPPSDL /app/ppsspp/",
+            "cp -dr assets /app/ppsspp/",
+            "install -Dm644 icons/icon-512.svg /app/share/icons/hicolor/scalable/apps/ppsspp.svg",
+            "ln -s /app/ppsspp/PPSSPPSDL /app/bin/ppsspp",
+            "install -m644 ppsspp.desktop /app/share/applications/"
+          ]
+        },
+        {
+          "type": "file",
+          "path": "ppsspp.desktop"
+        }
+      ]
+    }
+  ]
+}
