@@ -1,6 +1,7 @@
 {
   "app-id": "org.ppsspp.PPSSPP",
   "version": "1.3",
+  "branch": "stable",
   "runtime": "org.freedesktop.Platform",
   "runtime-version": "1.4",
   "sdk": "org.freedesktop.Sdk",
