@@ -7,6 +7,7 @@
   "command": "ppsspp",
   "rename-desktop-file": "ppsspp.desktop",
   "rename-icon": "ppsspp",
+  "rename-appdata-file": "ppsspp.xml",
   "tags": ["nightly"],
   "desktop-file-name-suffix": " (nightly)",
   "finish-args": [
@@ -41,18 +42,25 @@
           "dest-filename": "install.sh",
           "commands": [
             "set -x",
-            "mkdir -p /app/ppsspp /app/bin /app/share/applications",
+            "mkdir -p /app/ppsspp /app/bin",
             "install -m755 PPSSPPSDL /app/ppsspp/",
             "cp -dr assets /app/ppsspp/",
             "install -Dm644 icons/icon-512.svg /app/share/icons/hicolor/scalable/apps/ppsspp.svg",
-            "ln -s /app/ppsspp/PPSSPPSDL /app/bin/ppsspp",
-            "install -m644 ppsspp.desktop /app/share/applications/"
+            "ln -s /app/ppsspp/PPSSPPSDL /app/bin/ppsspp"
           ]
         },
         {
           "type": "file",
           "path": "ppsspp.desktop"
+        },
+        {
+          "type": "file",
+          "path": "appdata.xml"
         }
+      ],
+      "post-install": [
+        "install -Dm644 appdata.xml /app/share/appdata/ppsspp.appdata.xml",
+        "install -Dm644 ppsspp.desktop /app/share/applications/ppsspp.desktop"
       ]
     }
   ]
