@@ -15,26 +15,8 @@
     "--socket=x11"
   ],
   "modules": [
-    {
-      "name": "sdl2",
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://www.libsdl.org/release/SDL2-2.0.5.tar.gz",
-          "sha256": "442038cf55965969f2ff06d976031813de643af9c9edc9e331bd761c242e8785"
-        }
-      ]
-    },
-    {
-      "name": "glu",
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://mesa.freedesktop.org/archive/glu/glu-9.0.0.tar.bz2",
-          "sha256": "1f7ad0d379a722fcbd303aa5650c6d7d5544fde83196b42a73d1193568a4df12"
-        }
-      ]
-    },
+    "dependencies/sdl2-2.0.5.json",
+    "dependencies/glu-9.0.0.json",
     {
       "name": "ppsspp",
       "buildsystem": "cmake",
