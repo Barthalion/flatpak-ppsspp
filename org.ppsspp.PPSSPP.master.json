@@ -24,7 +24,8 @@
       "sources": [
         {
           "type": "git",
-          "url": "https://github.com/hrydgard/ppsspp.git"
+          "url": "https://github.com/hrydgard/ppsspp.git",
+          "branch": "2cf3f0247a246bde2c07cb662255b6ff87ece811"
         },
         {
           "type": "patch",
