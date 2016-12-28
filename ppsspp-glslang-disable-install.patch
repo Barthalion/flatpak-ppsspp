@@ -1,0 +1,68 @@
+diff --git a/OGLCompilersDLL/CMakeLists.txt b/OGLCompilersDLL/CMakeLists.txt
+index 4954db94..0381ddd4 100644
+--- a/OGLCompilersDLL/CMakeLists.txt
++++ b/OGLCompilersDLL/CMakeLists.txt
+@@ -6,6 +6,3 @@ set_property(TARGET OGLCompiler PROPERTY FOLDER glslang)
+ if(WIN32)
+     source_group("Source" FILES ${SOURCES})
+ endif(WIN32)
+-
+-install(TARGETS OGLCompiler 
+-        ARCHIVE DESTINATION lib)
+diff --git a/SPIRV/CMakeLists.txt b/SPIRV/CMakeLists.txt
+index c538e841..475c2b6d 100755
+--- a/SPIRV/CMakeLists.txt
++++ b/SPIRV/CMakeLists.txt
+@@ -48,6 +48,3 @@ if(WIN32)
+     source_group("Source" FILES ${SOURCES} ${HEADERS})
+     source_group("Source" FILES ${SPVREMAP_SOURCES} ${SPVREMAP_HEADERS})
+ endif(WIN32)
+-
+-install(TARGETS SPIRV SPVRemapper
+-        ARCHIVE DESTINATION lib)
+diff --git a/StandAlone/CMakeLists.txt b/StandAlone/CMakeLists.txt
+index 231ba277..a63a2b08 100644
+--- a/StandAlone/CMakeLists.txt
++++ b/StandAlone/CMakeLists.txt
+@@ -41,9 +41,3 @@ target_link_libraries(spirv-remap ${LIBRARIES})
+ if(WIN32)
+     source_group("Source" FILES ${SOURCES})
+ endif(WIN32)
+-
+-install(TARGETS glslangValidator
+-        RUNTIME DESTINATION bin)
+-
+-install(TARGETS spirv-remap
+-        RUNTIME DESTINATION bin)
+diff --git a/glslang/CMakeLists.txt b/glslang/CMakeLists.txt
+index 95d4bdd8..09d1b409 100644
+--- a/glslang/CMakeLists.txt
++++ b/glslang/CMakeLists.txt
+@@ -90,6 +90,3 @@ if(WIN32)
+     source_group("GenericCodeGen" REGULAR_EXPRESSION "GenericCodeGen/*")
+     source_group("MachineIndependent\\Preprocessor" REGULAR_EXPRESSION "MachineIndependent/preprocessor/*")
+ endif(WIN32)
+-
+-install(TARGETS glslang 
+-        ARCHIVE DESTINATION lib)
+diff --git a/glslang/OSDependent/Unix/CMakeLists.txt b/glslang/OSDependent/Unix/CMakeLists.txt
+index 174cc916..07b14055 100644
+--- a/glslang/OSDependent/Unix/CMakeLists.txt
++++ b/glslang/OSDependent/Unix/CMakeLists.txt
+@@ -1,5 +1,2 @@
+ add_library(OSDependent STATIC ossource.cpp ../osinclude.h)
+ set_property(TARGET OSDependent PROPERTY FOLDER glslang)
+-
+-install(TARGETS OSDependent 
+-        ARCHIVE DESTINATION lib)
+diff --git a/hlsl/CMakeLists.txt b/hlsl/CMakeLists.txt
+index ec5f1a56..3160dbff 100755
+--- a/hlsl/CMakeLists.txt
++++ b/hlsl/CMakeLists.txt
+@@ -23,6 +23,3 @@ set_property(TARGET HLSL PROPERTY FOLDER hlsl)
+ if(WIN32)
+     source_group("Source" FILES ${SOURCES} ${HEADERS})
+ endif(WIN32)
+-
+-install(TARGETS HLSL
+-        ARCHIVE DESTINATION lib)

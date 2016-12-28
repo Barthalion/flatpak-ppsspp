@@ -25,8 +25,7 @@
       "sources": [
         {
           "type": "git",
-          "url": "https://github.com/hrydgard/ppsspp.git",
-          "branch": "2cf3f0247a246bde2c07cb662255b6ff87ece811"
+          "url": "https://github.com/hrydgard/ppsspp.git"
         },
         {
           "type": "patch",
@@ -35,6 +34,11 @@
         {
           "type": "patch",
           "path": "ppsspp-revert-cmake-bump.patch"
+        },
+        {
+          "type": "patch",
+          "path": "ppsspp-glslang-disable-install.patch",
+          "dest": "ext/glslang"
         },
         {
           "type": "script",
