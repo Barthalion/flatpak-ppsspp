@@ -13,6 +13,7 @@
     "--filesystem=home:ro",
     "--share=network",
     "--socket=pulseaudio",
+    "--socket=wayland",
     "--socket=x11"
   ],
   "modules": [

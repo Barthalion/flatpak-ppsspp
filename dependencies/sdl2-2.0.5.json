@@ -1,5 +1,8 @@
 {
   "name": "sdl2",
+  "config-opts": [
+    "--enable-video-wayland"
+  ],
   "sources": [
     {
       "type": "archive",
