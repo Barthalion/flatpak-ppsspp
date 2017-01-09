@@ -16,8 +16,8 @@
     "--socket=x11"
   ],
   "modules": [
-    "dependencies/sdl2-2.0.5.json",
-    "dependencies/glu-9.0.0.json",
+    "modules/sdl2-2.0.5.json",
+    "modules/glu-9.0.0.json",
     {
       "name": "ppsspp",
       "buildsystem": "cmake",
