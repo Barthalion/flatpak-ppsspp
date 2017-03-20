@@ -2,7 +2,7 @@
   "app-id": "org.ppsspp.PPSSPP",
   "branch": "master",
   "runtime": "org.freedesktop.Platform",
-  "runtime-version": "1.4",
+  "runtime-version": "1.6",
   "sdk": "org.freedesktop.Sdk",
   "command": "ppsspp",
   "rename-desktop-file": "ppsspp.desktop",
@@ -22,37 +22,19 @@
     {
       "name": "ppsspp",
       "buildsystem": "cmake",
-      "post-install": [],
+      "no-make-install": true,
+      "build-commands": [
+        "mkdir -p /app/ppsspp /app/bin /app/share/applications",
+        "install -m755 PPSSPPSDL /app/ppsspp/",
+        "cp -dr assets /app/ppsspp/",
+        "install -Dm644 icons/icon-512.svg /app/share/icons/hicolor/scalable/apps/ppsspp.svg",
+        "ln -s /app/ppsspp/PPSSPPSDL /app/bin/ppsspp",
+        "install -m644 ppsspp.desktop /app/share/applications/"
+      ],
       "sources": [
         {
           "type": "git",
           "url": "https://github.com/hrydgard/ppsspp.git"
-        },
-        {
-          "type": "patch",
-          "path": "ppsspp-install.patch"
-        },
-        {
-          "type": "patch",
-          "path": "ppsspp-revert-cmake-bump.patch"
-        },
-        {
-          "type": "patch",
-          "path": "ppsspp-glslang-disable-install.patch",
-          "dest": "ext/glslang"
-        },
-        {
-          "type": "script",
-          "dest-filename": "install.sh",
-          "commands": [
-            "set -x",
-            "mkdir -p /app/ppsspp /app/bin /app/share/applications",
-            "install -m755 PPSSPPSDL /app/ppsspp/",
-            "cp -dr assets /app/ppsspp/",
-            "install -Dm644 icons/icon-512.svg /app/share/icons/hicolor/scalable/apps/ppsspp.svg",
-            "ln -s /app/ppsspp/PPSSPPSDL /app/bin/ppsspp",
-            "install -m644 ppsspp.desktop /app/share/applications/"
-          ]
         },
         {
           "type": "file",
