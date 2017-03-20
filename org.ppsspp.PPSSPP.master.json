@@ -11,7 +11,6 @@
   "desktop-file-name-suffix": " (nightly)",
   "finish-args": [
     "--filesystem=home:ro",
-    "--share=network",
     "--socket=pulseaudio",
     "--socket=wayland",
     "--socket=x11"
