@@ -21,12 +21,6 @@ flatpak run org.ppsspp.PPSSPP # or just applications menu
 PPSSPP alone works like a charm. The only thing to implement in this
 flatpak is AppStream information – partially done in [appstream branch][4].
 
-While working on flatpacking PPSSPP, I reported few issues against Flatpak itself:
-* Add option to disable 'make install' invocation (flatpak/flatpak#458)
-* Multiple branches of application overwrite each other desktop launcher (flatpak/flatpak#460)
-* Support for Ninja generator in CMake (flatpak/flatpak#461)
-* Upgrade yocto submodule and publish new SDK version (flatpak/freedesktop-sdk-base#2)
-
 One problem I didn't look at yet is SVG icon support in AppStream data, which
 seems to be broken.
 
