@@ -1,4 +1,6 @@
+*.flatpak
 *.flatpakref
+*.sig
 .flatpak-builder/
 builddir/
 release-repo/
