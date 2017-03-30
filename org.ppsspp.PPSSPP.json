@@ -16,7 +16,7 @@
     "--socket=x11"
   ],
   "modules": [
-    "modules/glu-9.0.0.json",
+    "deps/glu-9.0.0.json",
     {
       "name": "ppsspp",
       "buildsystem": "cmake",
