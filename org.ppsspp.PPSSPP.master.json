@@ -10,6 +10,7 @@
   "rename-appdata-file": "ppsspp.appdata.xml",
   "tags": ["nightly"],
   "finish-args": [
+    "--device=dri",
     "--filesystem=home:ro",
     "--socket=pulseaudio",
     "--socket=wayland",
