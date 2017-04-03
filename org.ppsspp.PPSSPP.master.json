@@ -9,7 +9,6 @@
   "rename-icon": "ppsspp",
   "rename-appdata-file": "ppsspp.appdata.xml",
   "tags": ["nightly"],
-  "desktop-file-name-suffix": " (nightly)",
   "finish-args": [
     "--filesystem=home:ro",
     "--socket=pulseaudio",
