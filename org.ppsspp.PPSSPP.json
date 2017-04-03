@@ -26,7 +26,7 @@
         "mkdir -p /app/ppsspp /app/bin /app/share/applications",
         "install -m755 PPSSPPSDL /app/ppsspp/",
         "cp -dr assets /app/ppsspp/",
-        "install -Dm644 assets/unix-icons/icon-512.svg /app/share/icons/hicolor/scalable/apps/ppsspp.svg",
+        "install -Dm644 icons/icon-512.svg /app/share/icons/hicolor/scalable/apps/ppsspp.svg",
         "ln -s /app/ppsspp/PPSSPPSDL /app/bin/ppsspp",
         "install -m644 ppsspp.desktop /app/share/applications/",
         "install -Dm644 appdata.xml /app/share/appdata/ppsspp.appdata.xml"
